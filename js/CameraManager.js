@@ -37,16 +37,16 @@ function SetupCameras(scene) {
                 console.log(pickInfo.pickedMesh.name);
                 CurrentSelection = pickInfo.pickedMesh.name.split('Arrow Collider ')[1];
                 console.log(CurrentSelection)
-                TravelRotateCamTo(CurrentSelection);//send corresponding infobox to travel to
-                show_backbutton();
-                RevealInfopoints(true, parseInt(CurrentSelection) - 1)
+                //TravelRotateCamTo(CurrentSelection);//send corresponding infobox to travel to
+                //show_backbutton();
+                //RevealInfopoints(true, parseInt(CurrentSelection) - 1)
                 //after time show all info buttons
             }
             else if (pickInfo && pickInfo.pickedMesh && BABYLON.Tags.MatchesQuery(pickInfo.pickedMesh, "hs_coll")) {
                 console.log(pickInfo.pickedMesh.name);
                 CurrentSelection = pickInfo.pickedMesh.name.split('hs Collider ')[1];
-                openInfoUI(CurrentSelection)
-                $('.x-icon').addClass('open');
+                //openInfoUI(CurrentSelection)
+                //$('.x-icon').addClass('open');
             }
             else if (pickInfo && pickInfo.pickedMesh && BABYLON.Tags.MatchesQuery(pickInfo.pickedMesh, "screen_link")) {
                 window.location.replace("https://mouseoveryou.github.io/emove/");
