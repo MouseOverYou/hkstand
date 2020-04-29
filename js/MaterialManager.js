@@ -56,10 +56,14 @@ function ChangeMaterialProperties() {
     arrowGlowTex.uOffset = 0.0
     arrowGlowTex.level = 2
 
+    scene.getMaterialByName("vid_high").transparencyMode = 2
+    scene.getMaterialByName("vid_high").alpha = 0
+
     screenMatOff = new BABYLON.PBRMaterial("screenMatOff", scene)
     screenMatOff.albedoColor = redBay
     screenMatOff.metallic = 0.2
     screenMatOff.roughness = 0.5
+    screenMatOff.alpha = 0
 
     screenMatOn = new BABYLON.PBRMaterial("screenMatOn", scene)
     screenMatOn.albedoColor = redBay
