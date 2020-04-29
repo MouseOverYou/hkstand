@@ -29,7 +29,7 @@ function LoadAssets(scene, assetsManager) {
     }
 
     Messe_P = new BABYLON.TransformNode("Messe_P");
-    MesseLoaderTask = assetsManager.addMeshTask("", "", "./assets/3dstand_v5.glb")
+    MesseLoaderTask = assetsManager.addMeshTask("", "", "./assets/3dstand_v5_henkel.glb")
 
     MesseLoaderTask.onSuccess = function (task) {
         
@@ -69,15 +69,17 @@ function LoadAssets(scene, assetsManager) {
         console.log(message, exception);
     }
 
+    
     LogosLoaderTask = assetsManager.addMeshTask("", "", "./assets/stand_logos.glb")
     LogosLoaderTask.onSuccess = function (task) {
-        task.loadedMeshes[0].scaling = new BABYLON.Vector3(0.003, 0.003, 0.003)
+        //task.loadedMeshes[0].scaling = new BABYLON.Vector3(0.003, 0.003, 0.003)
+        task.loadedMeshes[0].scaling = new BABYLON.Vector3(0.000, 0.000, 0.000)
     }
 
     LogosLoaderTask.onError = function (task, message, exception) {
         console.log(message, exception);
     }
-
+    
 
     HS_P = new BABYLON.TransformNode("HS_P");
     HSIconTask = assetsManager.addMeshTask("", "", "./assets/HS_Icon.glb")

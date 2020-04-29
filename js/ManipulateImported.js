@@ -58,7 +58,7 @@ function SpawnHotspots(){
             //create Colliders
             elem.visibility = false;
             ArrowsHolder.push(elem.parent)
-            FeedWithLogo(elem.name.split("_")[1], elem)
+            //FeedWithLogo(elem.name.split("_")[1], elem)
             
             arrowColl = new BABYLON.MeshBuilder.CreateBox("Arrow Collider " + arrowCounter, { height: 80, width: 80, depth: 10 }, scene)
             arrowColl.material = colMat
@@ -103,13 +103,15 @@ function SpawnHotspots(){
                 //overStation = elem.name.split('Arrow Collider ')[1];
                 //overStation = "arrow border " + overStation
                 //console.log("mouse over " +  overStation)
-                //scene.getMeshByName(overStation).material = arrowMatOn
+                scene.getMeshByName("vid_highlight_links").material = screenMatOn
+                scene.getMeshByName("vid_highlight_rechts").material = screenMatOn
             }));
             
             //ON MOUSE EXIT
             elem.actionManager.registerAction(new BABYLON.ExecuteCodeAction(BABYLON.ActionManager.OnPointerOutTrigger, function(ev){
                 //elem.material.emissiveColor = BABYLON.Color3.Black();
-                //scene.getMeshByName(overStation).material = arrowMatOff
+                scene.getMeshByName("vid_highlight_links").material = screenMatOff
+                scene.getMeshByName("vid_highlight_rechts").material = screenMatOff
                 //overStation = undefined;
             }));
         }
